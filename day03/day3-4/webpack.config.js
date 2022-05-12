@@ -3,6 +3,16 @@ const path = require("path")
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+    // development 开发环境
+    // production 生产环境
+    mode: 'development',
+    // 开发环境
+    devServer: {
+        // 项目目录
+        // contentBase: path.join(__dirname, 'dist'),
+        port: 3000,
+        open: true
+    },
      // 打包入口
     entry: "./src/index.js",
     // 打包出口配置
@@ -33,7 +43,13 @@ module.exports = {
             test: /\.less$/,
             // 使用less-loader, 让webpack处理less文件, 内置还会用less翻译less代码成css内容
             use: [ "style-loader", "css-loader", 'less-loader']
-          }
+          },
+          {
+            // 通过正则匹配 .png|jpg|gif|jpeg 结尾的文件
+            test: /\.(png|jpg|gif|jpeg)$/i,
+            // 处理静态资源
+            type: 'asset',
+          },
         ]
     }
 }

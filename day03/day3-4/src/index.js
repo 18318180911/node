@@ -5,6 +5,8 @@ import { addFn,obj } from './add/add';
 import dayjs from 'dayjs';
 import style from './css/index.css';
 import less from './less/index.less';
+import logoSrc from './assets/s_01(1).jpg';
+document.body.style.backgroundImage = `url(${logoSrc})`
 console.log(addFn(10, 20));
 console.log('obj', obj);
 console.log(dayjs().format('hh:mm:ss'));
