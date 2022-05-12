@@ -2,7 +2,9 @@
 // 导入'./add/add'文件，并解构出addfn
 import { addFn,obj } from './add/add';
 // const { addFn } = require('./add/add);
-import dayjs from 'dayjs'
+import dayjs from 'dayjs';
+import style from './css/index.css';
 console.log(addFn(10, 20));
 console.log('obj', obj);
 console.log(dayjs().format('hh:mm:ss'));
+console.log(style);
